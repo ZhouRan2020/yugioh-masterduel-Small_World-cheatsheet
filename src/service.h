@@ -24,5 +24,5 @@ struct Card {
     std::set<std::string> alias;
 };
 std::vector<std::vector<bool>> init_service(std::string_view deck_name, std::vector<Card>&);
-void handle_request(std::string const& hand, std::vector<Card> const&, std::vector<std::vector<bool>> const& relation);
+void handle_request(std::vector<std::string> const& hand, std::vector<Card> const&, std::vector<std::vector<bool>> const& relation);
 #endif //YUGIOH_MASTER_DUEL_KIT_SERVICE_H
