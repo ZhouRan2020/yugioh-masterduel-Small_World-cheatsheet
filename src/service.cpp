@@ -82,9 +82,11 @@ void handle_request(std::vector<std::string> const& hand_cards, std::vector<Card
         for(auto pr : paths) {
             std::cout<< "手卡"<<std::quoted(cdb[pr.first].name);
             std::cout << "卡组{";
-            for(auto v : pr.second) {
-                 std::cout << std::quoted(cdb[v].name);
-                 std::cout << ",";
+            for(auto v = pr.second.begin();v!=pr.second.end();++v) {
+                if(v!=pr.second.begin()) {
+                    //std::cout << ",";
+                }
+                std::cout << std::quoted(cdb[*v].name);
             }
             std::cout<<"}";
         }

@@ -5,7 +5,7 @@
 static std::vector<Card> carddb;
 int main(int argc, char** argv)
 {
-    std::string deck_name{"popular_cards.md"};
+    std::string deck_name{"Ryzeal.deck"};
     if(argc >=2 ) {
         deck_name=argv[1];
     }
@@ -21,7 +21,7 @@ int main(int argc, char** argv)
         }
         handle_request(hand_cards, carddb, relation);
         hand_cards.clear();
-        std::cout<<"输入手卡中一张怪兽的名字(one or more)：";
+        std::cout<<"输入手卡中怪兽的名字(one or more)：";
     }
     return 0;
 }
