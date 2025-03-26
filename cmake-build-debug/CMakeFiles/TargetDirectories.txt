@@ -1,3 +1,0 @@
-/Users/zhouran06/CLionProjects/yugioh-masterduel-Small_World-cheatsheet/cmake-build-debug/CMakeFiles/yugioh_master_duel_kit.dir
-/Users/zhouran06/CLionProjects/yugioh-masterduel-Small_World-cheatsheet/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/zhouran06/CLionProjects/yugioh-masterduel-Small_World-cheatsheet/cmake-build-debug/CMakeFiles/rebuild_cache.dir
