@@ -7,15 +7,8 @@
 #include <sstream>
 #include <map>
 #include <set>
-bool is_know(const Card& c1, const Card& c2) {
-    std::vector<bool> checklist(5,false);
-    checklist[0]=c1.type==c2.type;
-    checklist[1]=c1.attr==c2.attr;
-    checklist[2]=c1.atk==c2.atk;
-    checklist[3]=c1.def==c2.def;
-    checklist[4]=c1.level==c2.level;
-    return count(checklist.begin(),checklist.end(),true)==1;
-}
+#include "util.h"
+bool is_know(const Card& c1, const Card& c2);
 std::vector<std::vector<bool>> init_service(std::string_view deck_name, std::vector<Card>& cdb)
 {
     cdb.clear();
@@ -78,9 +71,9 @@ void handle_request(std::vector<std::string> const& hand_cards, std::vector<Card
         }
     }
     for(auto const & [tar, paths]: final_res) {
-        std::cout<<"检索"<< std::quoted(cdb[tar].name) << " via ";
+        std::cout<<"** 检索"<<RED<< std::quoted(cdb[tar].name) <<RESET<< " via ";
         for(auto pr : paths) {
-            std::cout<< "手卡"<<std::quoted(cdb[pr.first].name);
+            std::cout<< "手卡"<<GREEN<<std::quoted(cdb[pr.first].name)<<RESET;
             std::cout << "卡组{";
             for(auto v = pr.second.begin();v!=pr.second.end();++v) {
                 if(v!=pr.second.begin()) {
@@ -92,4 +85,13 @@ void handle_request(std::vector<std::string> const& hand_cards, std::vector<Card
         }
         std::cout<<'\n';
     }
+}
+bool is_know(const Card& c1, const Card& c2) {
+    std::vector<bool> checklist(5,false);
+    checklist[0]=c1.type==c2.type;
+    checklist[1]=c1.attr==c2.attr;
+    checklist[2]=c1.atk==c2.atk;
+    checklist[3]=c1.def==c2.def;
+    checklist[4]=c1.level==c2.level;
+    return count(checklist.begin(),checklist.end(),true)==1;
 }

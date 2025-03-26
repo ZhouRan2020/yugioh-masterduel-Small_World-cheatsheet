@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(yugioh_master_duel_kit src/main.cpp
         src/service.h
-        src/service.cpp)
+        src/service.cpp
+        src/util.h)
