@@ -70,6 +70,7 @@ void handle_request(std::vector<std::string> const& hand_cards, std::vector<Card
             }
         }
     }
+    std::cout<<"====================\n";
     for(auto const & [tar, paths]: final_res) {
         std::cout<<"** 检索"<<RED<< std::quoted(cdb[tar].name) <<RESET<< " via ";
         for(auto pr : paths) {
