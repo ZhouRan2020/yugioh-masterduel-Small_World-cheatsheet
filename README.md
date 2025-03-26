@@ -1,5 +1,6 @@
 游戏王“小世界现象”工具 
 master duel, duel links, yu-gi-oh
+卡片信息：
 小世界现象
 スモール・ワールド
 Small World
